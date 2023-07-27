@@ -1,106 +1,3 @@
-// //Simulación de compra de Sandwich
-// let sandwiches = [
-//     { nombre: "pollo", precio: 700 },
-//     { nombre: "carne", precio: 800 },
-//     { nombre: "vegetariano", precio: 550 }
-//   ];
-  
-//   let ingredientesDisponibles = ["Jamon", "Lechuga", "Tomate","Mayonesa","Mostaza"];
-  
-//   let tipoSandwich = "";
-//   let precioTotal = 0;
-//   let ingredientesElegidos = [];
-//   let agregarPapasFritas = false;
-//   const cargoPapasFritas = 250; // Precio adicional por las papas fritas
-  
-//   //Agregar ingredientes al pedido
-//   function agregarIngrediente(ingrediente) {
-//     if (!isNaN(ingrediente)) {
-//       let indiceIngrediente = parseInt(ingrediente);
-//       if (indiceIngrediente >= 0 && indiceIngrediente < ingredientesDisponibles.length) {
-//         ingredientesElegidos.push(ingredientesDisponibles[indiceIngrediente]);
-//       } else {
-//         alert("El número de ingrediente ingresado no es válido.");
-//       }
-//     } else {
-//       if (ingredientesDisponibles.includes(ingrediente)) {
-//         ingredientesElegidos.push(ingrediente);
-//       } else {
-//         alert("El ingrediente ingresado no está disponible.");
-//       }
-//     }
-//   }
-  
-//   //Agregar papas fritas al pedido y sumar el cargo adicional al precio total
-//   function agregarPapas() {
-//     agregarPapasFritas = confirm("¿Deseas agregar papas fritas por un costo adicional de $" + cargoPapasFritas.toFixed(2) + "?" + ", " + "Si no desea seleccionar Cancelar");
-//     if (agregarPapasFritas) {
-//       precioTotal += cargoPapasFritas;
-//     }
-//   }
-  
-//   //Resumen de la compra
-//   function mostrarResumenSandwich() {
-//     let resumen = "Resumen de la compra:\n\n";
-//     resumen += "Tipo de sándwich: " + tipoSandwich + "\n";
-//     resumen += "Ingredientes: " + ingredientesElegidos.join(", ") + "\n";
-//     resumen += "Papas fritas: " + (agregarPapasFritas ? "Sí" : "No") + "\n";
-//     resumen += "Precio total: $" + precioTotal.toFixed(2);
-//     alert(resumen);
-//   }
-  
-//   //Mensaje de sándwich disponibles
-//   let mensajeSandwiches = "Sándwich disponibles:\n";
-//   for (let i = 0; i < sandwiches.length; i++) {
-//     mensajeSandwiches += i + " -> " + sandwiches[i].nombre + " ($" + sandwiches[i].precio.toFixed(2) + ")\n";
-//   }
-  
-//   let tipoSandwichValido = false;
-//   while (!tipoSandwichValido) {
-//     tipoSandwich = prompt("Seleccione el tipo de sándwich (número):  " + mensajeSandwiches);
-//     if (!isNaN(tipoSandwich)) {
-//       let indiceSandwich = parseInt(tipoSandwich);
-//       if (indiceSandwich >= 0 && indiceSandwich < sandwiches.length) {
-//         tipoSandwich = sandwiches[indiceSandwich].nombre;
-//         precioTotal += sandwiches[indiceSandwich].precio;
-//         tipoSandwichValido = true;
-//       } else {
-//         alert("Ingresado un numero de sándwich válido.");
-//       }
-//     } else {
-//       alert("El tipo de sándwich ingresado no es válido.");
-//     }
-//   }
-  
-//   // Mensaje con los ingredientes disponibles
-//   let mensajeIngredientes = "Ingredientes disponibles:\n";
-//   for (let i = 0; i < ingredientesDisponibles.length; i++) {
-//     mensajeIngredientes += i + " -> " + ingredientesDisponibles[i] + "\n";
-//   }
-  
-//   let continuar = true;
-//   while (continuar) {
-//     let ingrediente = prompt("Ingrese los ingredientes que desea (o escriba 'esc' para finalizar):  " + mensajeIngredientes);
-  
-//     if (ingrediente.toLowerCase() === "esc") {
-//       continuar = false;
-//     } else {
-//       agregarIngrediente(ingrediente);
-//     }
-//   }
-  
-//   agregarPapas();
-//   mostrarResumenSandwich();
-
-
-
-
-
-
-
-
-
-
 // Obtiene los datos guardados en el almacenamiento local (si existen)
 let sandwichData = localStorage.getItem('sandwichData');
 let ingredientData = localStorage.getItem('ingredientData');
@@ -120,11 +17,11 @@ if (!sandwichData) {
 
 if (!ingredientData) {
   ingredientData = JSON.stringify([
-    { name: 'Jamon', precio: 1.5 },
-    { name: 'Lechuga', precio: 0.8 },
-    { name: 'Tomate', precio: 0.5 },
-    { name: 'Mayonesa', precio: 0.7 },
-    { name: 'Mostaza', precio: 0.6 }
+    { name: 'Jamon', precio: 100},
+    { name: 'Lechuga', precio: 50 },
+    { name: 'Tomate', precio: 10},
+    { name: 'Mayonesa', precio: 10 },
+    { name: 'Mostaza', precio: 10 }
   ]);
   localStorage.setItem('ingredientData', ingredientData);
 } else {
