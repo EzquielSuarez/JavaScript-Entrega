@@ -17,11 +17,11 @@ if (!sandwichData) {
 
 if (!ingredientData) {
   ingredientData = JSON.stringify([
-    { name: 'Jamon', precio: 100},
-    { name: 'Lechuga', precio: 50 },
-    { name: 'Tomate', precio: 10},
-    { name: 'Mayonesa', precio: 10 },
-    { name: 'Mostaza', precio: 10 }
+    { name: 'Jamon', precio: 1.5 },
+    { name: 'Lechuga', precio: 0.8 },
+    { name: 'Tomate', precio: 0.5 },
+    { name: 'Mayonesa', precio: 0.7 },
+    { name: 'Mostaza', precio: 0.6 }
   ]);
   localStorage.setItem('ingredientData', ingredientData);
 } else {
